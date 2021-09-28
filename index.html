@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  
+  
+  
+  
+    <title>JavaScript</title>
+  <style>
+   body {  background-image: url("fundo.png");  ; 
+    background-color: rgb(34, 34, 34);
+    font: normal 16pt Arial;
+    height: 4px;
+  }
+  
+  h1{ font: normal 36pt Arial;
+    color: rgb(255, 255, 255);
+
+
+    }
+    h2{ font: normal 26pt Arial;
+    color: rgb(255, 255, 255);
+
+
+    }
+  h3{color: rgb(255, 255, 255);
+    
+
+  }
+  h4{ font: normal 22pt Arial;
+    color: rgb(255, 255, 255);
+
+
+    }
+
+    p {
+    color: cornsilk;
+      background-color: blue
+    
+    }
+
+  a{
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    background-color: rgb(152, 152, 152);
+    border-radius: 6%;
+
+  }
+  a:hover{
+    color: rgb(0, 195, 255);
+    
+    
+  }
+
+    img    {
+    border-radius: 10%;
+}
+
+</style>
+</head>
+<body>
+  <center><h1>Atividade JavaScript</h1></center>     
+
+  <div>
+    <div class="card" style="width: 340px;">
+        <div class="card-body">
+          <h5 class="card-title">Calcular média</h5>
+        <div class="card-body">
+          <div class="form-group">
+            <input class="form-control" id="mediaNota1"  placeholder="Primeira nota">
+          </div>
+          <div class="form-group">
+            <input class="form-control" id="mediaNota2"  placeholder="Segunda Nota">
+          </div>
+          <div class="form-group">
+            <input class="form-control" id="mediaNota3"  placeholder="Terceira nota">
+          </div> 
+        <div class="form-group">
+          <button type="button" onclick="media()" class="btn btn-primary">Calcular</button>
+        </div>
+
+      </div>
+  </div>
+  <div  class="card-footer ">
+    <h5 id="resultadoMedia"> O resultado ira aparecer aqui </h5> 
+  </div>
+  </div>
+
+
+  <div>
+    <div class="card" style="width: 340px;">
+        <div class="card-body">
+          <h5 class="card-title">Calcular categoria</h5>
+        <div class="card-body">
+          <div class="form-group">
+            <input class="form-control" id="idadeAprove"  placeholder="Idade">
+          </div> 
+          <a type="button" onclick="idade()" class="btn btn-primary">Calcular</a>
+        </div>
+      </div>
+      <div id=resultadoIdade class="card-footer">
+        O resultado ira aparecer aqui
+      </div>
+  </div>
+
+
+  <div>
+    <div class="card" style="width: 340px;">
+        <div class="card-body">
+          <h5 class="card-title">Calcular taubada</h5>
+        <div class="card-body">
+          <div class="form-group">
+            <input class="form-control" id="vezesTabu"  placeholder="Informe o numero">
+          </div> 
+          <a type="button" onclick="tabuada()" class="btn btn-primary">Calcular</a>
+        </div>
+      </div>
+      <div id=resultadoTabuada class="card-footer">
+        O resultado ira aparecer aqui
+      </div>
+  </div>
+
+
+  <div>
+    <div class="card" style="width: 340px;"> 
+        <div class="card-body">
+          <h5 class="card-title">Calcular metros quadrados</h5>
+        <div class="card-body">
+          <div class="form-group">
+            <input class="form-control" id="metroAltura"  placeholder="Informe a altura em metros">
+          </div>
+        <div class="form-group">
+          <input class="form-control" id="metroLargura"  placeholder="Informe a largura em metros">
+        </div> 
+          <a type="button" onclick="metrosQua()" class="btn btn-primary">Calcular</a>
+        </div>
+      </div>
+      <div id=resultadoMetros class="card-footer">
+        O resultado ira aparecer aqui
+      </div>
+  </div>
+
+
+  <div>
+    <div class="card" style="width: 340px;">
+        <div class="card-body">
+          <h5 class="card-title">Calcular idade</h5>
+        <div class="card-body">
+          <div class="form-group">
+            <input class="form-control" id="anosIdade"  placeholder="Quantos anos você tem?">
+          </div>
+          <div class="form-group">
+            <input class="form-control" id="mesesIdade"  placeholder="A quantos meses foi seu aniversário?">
+          </div>
+          <div class="form-group">
+            <input class="form-control" id="diasIdade"  placeholder="A quantos dias?">
+          </div> 
+        <div class="form-group">
+          <button type="button" onclick="diasIdade()" class="btn btn-primary">Calcular</button>
+        </div>
+        <div class="card-footer">
+          <h5 id='resultadosIdade' >O resultado ira aparecer aqui</h5>
+        </div>
+      </div>
+  </div>
+  </div>
+
+  <div>
+    <div class="card" style="width: 340px;">
+        <div class="card-body">
+          <h5 class="card-title">Calcular medalha</h5>
+        <div class="card-body">
+          <div class="form-group">
+            <input class="form-control" id="nadadorUm"  placeholder="Primeiro nadador">
+          </div>
+          <div class="form-group">
+            <input class="form-control" id="nadadorDois"  placeholder="Segundo nadador">
+          </div>
+          <div class="form-group">
+            <input class="form-control" id="nadadorTres"  placeholder="Terceiro nadador">
+          </div> 
+        <div class="form-group">
+          <button type="button" onclick="tempoMedalha()" class="btn btn-primary">Calcular</button>
+        </div>
+
+      </div>
+  </div>
+  <div  class="card-footer ">
+    <h5 id="resultadoNadador1"> O resultado ira aparecer aqui </h5>
+    <h5 id="resultadoNadador2">  </h5>
+    <h5 id="resultadoNadador3">  </h5> 
+  </div>
+  </div>
+
+  <div>
+    <div class="card" style="width: 340px;"> 
+        <div class="card-body">
+          <h5 class="card-title">Calcular maior número</h5>
+        <div class="card-body">
+          <div class="form-group">
+            <input class="form-control" id="numMaior1"  placeholder="Diga um numero">
+          </div>
+        <div class="form-group">
+          <input class="form-control" id="numMaior2"  placeholder="Diga outro numero">
+        </div> 
+          <a type="button" onclick="numMaior()" class="btn btn-primary">Calcular</a>
+        </div>
+      </div>
+      <div id=resultadoNumaior class="card-footer">
+        O resultado ira aparecer aqui
+      </div>
+  </div>
+
+  <div>
+    <div class="card" style="width: 340px;"> 
+        <div class="card-body">
+          <h5 class="card-title">Calcular prestação</h5>
+        <div class="card-body">
+          <div class="form-group">
+            <input class="form-control" id="valorPrest"  placeholder="Valor da prestação">
+          </div>
+        <div class="form-group">
+          <input class="form-control" id="diasPrest"  placeholder="Dias atrasados">
+        </div> 
+          <a type="button" onclick="totalPrest()" class="btn btn-primary">Calcular</a>
+        </div>
+      </div>
+      <div class="card-footer">
+        <h5 id="valorPresta"> O resultado ira aparecer aqui </h5>
+        <h5 id="valorJuros">  </h5>
+        <h5 id="valorTotal">  </h5>
+      </div>
+  </div>
+
+  <div>
+    <div class="card" style="width: 340px;">
+        <div class="card-body">
+          <h5 class="card-title">Calcular categoria</h5>
+        <div class="card-body">
+          <div class="form-group">
+            <input class="form-control" id="numPositivo"  placeholder="Diga um numero">
+          </div> 
+          
+          <a type="button" onclick="numFunc()" class="btn btn-primary">Calcular</a>
+        </div>
+      </div>
+      <div id=numResult class="card-footer">
+        O resultado ira aparecer aqui
+      </div>
+  </div>
+
+  <div>
+    <div class="card" style="width: 340px;">
+        <div class="card-body">
+          <h5 class="card-title">Calcular positivo</h5>
+        <div class="card-body">
+          <div class="form-group">
+            <input class="form-control" id="numPosi1"  placeholder="Diga um numero">
+            <input class="form-control" id="numPosi2"  placeholder="Diga um numero">
+            <input class="form-control" id="numPosi3"  placeholder="Diga um numero">
+            <input class="form-control" id="numPosi4"  placeholder="Diga um numero">
+          </div> 
+          
+          <a type="button" onclick="doisMaior()" class="btn btn-primary">Calcular</a>
+        </div>
+      </div>
+      <div id=doisResult class="card-footer">
+        O resultado ira aparecer aqui
+      </div>
+  </div>
+
+
+
+
+
+  
+
+  
+    
+  
+   
+    
+
+</body>
+<script>
+function media()  {
+  let n1 =parseFloat(document.getElementById('mediaNota1').value);
+  let n2 =parseFloat(document.getElementById('mediaNota2').value);
+  let n3 =parseFloat(document.getElementById('mediaNota3').value);
+  let prove;
+  let media;
+
+  if (n1+n2+n3<1) {
+    document.getElementById('resultadoMedia').innerHTML='Alguma nota é invalida' ;
+  } 
+  else{
+    media=(n1 + n2 + n3) / 3;
+    if (media>6){
+      prove= ' aprovado'
+    } else{
+      prove= ' reprovado'
+    }
+    
+    document.getElementById('resultadoMedia').innerHTML='A média é '+media+prove;
+  }
+}
+
+function idade()  {
+  let n1 =parseFloat(document.getElementById('idadeAprove').value);
+  let prove='Idade não informada';
+
+    if (n1<7) {
+      prove= 'Infantil';
+    }
+    if (n1>8 & n1<13) {
+      prove= 'Juvenil';
+    }
+    if (n1>=18) {
+      prove= 'Adulto';
+    }
+    if (n1>13 & n1<18) {
+      prove= 'Adolescente';
+    }
+    
+    document.getElementById('resultadoIdade').innerHTML=prove;
+}
+
+function tabuada()  {
+  let n1 =parseFloat(document.getElementById('vezesTabu').value);
+  let tabu;
+  for (i = 0; i < 10; i++) {
+    tabu=n1*i
+    document.getElementById('resultadoTabuada').innerHTML=tabu;
+  }
+}
+
+function metrosQua()  {
+  let n1 =parseFloat(document.getElementById('metroAltura').value);
+  let n2 =parseFloat(document.getElementById('metroLargura').value);
+
+  media= n1*n2
+  document.getElementById('resultadoMetros').innerHTML='Total de metros quadrados: '+media;
+
+}
+
+function diasIdade()  {
+  let n1 =parseFloat(document.getElementById('anosIdade').value);
+  let n2 =parseFloat(document.getElementById('mesesIdade').value);
+  let n3 =parseFloat(document.getElementById('diasIdade').value);
+
+  total=0;
+
+  total=(n1*365)+(n2*30)+(n3);
+
+  document.getElementById('resultadosIdade').innerHTML='Você tem ' + total + ' dias de vida';
+
+}
+
+function tempoMedalha(){
+  let n1 =parseFloat(document.getElementById('nadadorUm').value);
+  let n2 =parseFloat(document.getElementById('nadadorDois').value);
+  let n3 =parseFloat(document.getElementById('nadadorTres').value);
+  let ganhador=0
+
+  if(n1<n2 & n1<n3){
+    ganhador=1;
+  } else if(n2<n1 & n2<n3){
+    ganhador=2;
+  } else{
+    ganhador=3;
+  }
+  if (ganhador==1 & n2<n3 ){
+    document.getElementById('resultadoNadador1').innerHTML="O "+ganhador+"º nadador ganhou ouro ";
+    document.getElementById('resultadoNadador2').innerHTML="O 2º nadador ganhou prata ";
+    document.getElementById('resultadoNadador3').innerHTML="O 3º nadador ganhou bronze ";
+  } else if(ganhador==1 & n3<n2 ){
+    document.getElementById('resultadoNadador1').innerHTML="O "+ganhador+"º nadador ganhou ouro ";
+    document.getElementById('resultadoNadador2').innerHTML="O 3º nadador ganhou prata ";
+    document.getElementById('resultadoNadador3').innerHTML="O 2º nadador ganhou bronze ";
+
+  }else if (ganhador==2 & n1<n3 ){
+    document.getElementById('resultadoNadador1').innerHTML="O "+ganhador+"º nadador ganhou ouro ";
+    document.getElementById('resultadoNadador2').innerHTML="O 1º nadador ganhou prata ";
+    document.getElementById('resultadoNadador3').innerHTML="O 3º nadador ganhou bronze ";
+
+  }else if (ganhador==2 & n3<n1 ){
+    document.getElementById('resultadoNadador1').innerHTML="O "+ ganhador +"º nadador ganhou ouro ";
+    document.getElementById('resultadoNadador2').innerHTML="O 3º nadador ganhou prata ";
+    document.getElementById('resultadoNadador3').innerHTML="O 1º nadador ganhou bronze ";
+
+  }else if (ganhador==3 & n1<n2 ){
+    document.getElementById('resultadoNadador1').innerHTML="O "+ganhador+"º nadador ganhou ouro ";
+    document.getElementById('resultadoNadador2').innerHTML="O 1º nadador ganhou prata ";
+    document.getElementById('resultadoNadador3').innerHTML="O 2º nadador ganhou bronze ";
+
+  }else if (ganhador==3 & n1<n2 ){
+    document.getElementById('resultadoNadador1').innerHTML="O "+ganhador+"º nadador ganhou ouro ";
+    document.getElementById('resultadoNadador2').innerHTML="O 2º nadador ganhou prata ";
+    document.getElementById('resultadoNadador3').innerHTML="O 1º nadador ganhou bronze ";
+
+  }
+
+
+
+}
+
+function numMaior()  {
+  let n1 =parseFloat(document.getElementById('numMaior1').value);
+  let n2 =parseFloat(document.getElementById('numMaior2').value);
+  let prove;
+
+    if (n1>n2) {
+      prove= 'O primeiro número é maior'
+    } else{
+      prive='O segundo número é maior'
+    }
+    
+    document.getElementById('resultadoNumaior').innerHTML=prove;
+}
+
+function totalPrest()  {
+  let n1 =parseFloat(document.getElementById('valorPrest').value);
+  let n2 =parseFloat(document.getElementById('diasPrest').value);
+  let prove;
+  let valor;
+  valor= (n1*0,02)*n2;
+  prove= valor+n1;
+    
+  document.getElementById('valorPresta').innerHTML='Valor da prestação: '+ n1;
+  document.getElementById('valorTotal').innerHTML='Valor total: '+prove;
+  document.getElementById('valorJuros').innerHTML='Valor do juros: '+valor;
+}
+
+function numFunc(){
+  let n1 =parseFloat(document.getElementById('numPositivo').value);
+  let prove;
+  if (n1==0){
+    prove='Neutro';
+  } else if (n1>0){
+    prove='Positivo';
+  } else {
+    prove='Negativo';
+  }
+  document.getElementById('numResult').innerHTML='O número é '+prove;
+
+}
+
+function doisMaior()  {
+  let n1 =parseFloat(document.getElementById('numPosi1').value);
+  let n2 =parseFloat(document.getElementById('numPosi2').value);
+  let n3 =parseFloat(document.getElementById('numPosi3').value);
+  let n4 =parseFloat(document.getElementById('numPosi4').value);
+  let prove;
+
+  if ((n1+n2)>(n3+n4)){
+    ganhador= 'Os primeiros numeros são maiores'
+  } else if((n1+n2)<(n3+n4)){
+    ganhador= 'Os segundos numeros são maiores'
+  } else{
+    ganhador="As somas são iguais"
+  }
+  
+  document.getElementById('doisResult').innerHTML=ganhador;
+
+}
+
+
+
+
+
+</script>
+
+</html>
+
+EMAIL
+E-mail: bruno.murer_BOLS@compasso.com.br
+Senha: C0nnect123
+
+ALURA
+Usuário: bruno.murer_bols@compasso.com.br
+Senha: 88773fe7
+
+FIGMA
+E-mail: bruno.murer_BOLS@compasso.com.br
+Senha: C0nnect123
